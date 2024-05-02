@@ -18,6 +18,8 @@ jobs:
         run: npm run test
       - name: Trigger deployment
         run: curl https://api.render.com/deploy/${{ secrets.RENDER_SERVICE_ID }}?key=${{ secrets.RENDER_API_KEY }}
+        run: |
+          echo "${{ secrets.TESTING }}"
       - name: print date
         run: |
           date
